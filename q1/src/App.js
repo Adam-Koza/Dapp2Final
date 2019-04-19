@@ -38,13 +38,16 @@ class App extends Component {
       }
     };
     function receivePosts (json) {
-      return json.filter((item) => {
+      let filtered = json.filter((item) => {
         console.log(item);
         return item.isActive === true;
-      })
-  
+      });
+      let mapped = filtered.map((items) => {
+        return { "first": items.name.first, "last": items.name.last, "balance":items.balance };
+      });
+      console.log(mapped);
+      return mapped;
     };
-
 
     fetchPosts();
     return (
