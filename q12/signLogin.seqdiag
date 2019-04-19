@@ -1,0 +1,5 @@
+User->Server: requestLogin
+Server-->User: messageToSign
+User->Server: signedMessage
+Server->Server: verifySignature
+Server-->User: accessGranted
